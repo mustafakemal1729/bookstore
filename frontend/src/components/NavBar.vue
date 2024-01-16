@@ -1,22 +1,22 @@
 <template>
     <nav class="navbar navbar-expand-md custom-nav">
         <div class="container">
-            <a class="navbar-brand" href="">{{ brandName }}</a>
+            <RouterLink class="navbar-brand" to="#">{{ brandName }}</RouterLink>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Home</a>
+                    <RouterLink class="nav-link" v-bind:to="{ name: 'home' }">Home</RouterLink>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Books</a>
+                    <RouterLink class="nav-link" v-bind:to="{ name: 'books' }">Books</RouterLink>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Contact</a>
+                    <RouterLink class="nav-link" v-bind:to="{ name: 'contact' }">Contact</RouterLink>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Login</a>
+                    <RouterLink class="nav-link" to="/login">Login</RouterLink>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Register</a>
+                    <RouterLink class="nav-link" to="/register">Register</RouterLink>
                 </li>
             </ul>
         </div>
@@ -24,16 +24,18 @@
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
+
 export default {
     name: "NavBar",
     data() {
         return {
             brandName: "BookStore"
-        }
-    }
+        };
+    },
+    components: { RouterLink }
 }
 </script>
-
 <style scoped>
 .custom-nav {
     background-color: #063560;
