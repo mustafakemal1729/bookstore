@@ -13,10 +13,10 @@
                     <RouterLink class="nav-link" v-bind:to="{ name: 'contact' }">Contact</RouterLink>
                 </li>
                 <li class="nav-item">
-                    <RouterLink class="nav-link" to="/login">Login</RouterLink>
+                    <RouterLink class="nav-link" v-bind:to="{name: 'login'}">Login</RouterLink>
                 </li>
                 <li class="nav-item">
-                    <RouterLink class="nav-link" to="/register">Register</RouterLink>
+                    <RouterLink class="nav-link" v-bind:to="{name: 'register'}">Register</RouterLink>
                 </li>
             </ul>
         </div>
