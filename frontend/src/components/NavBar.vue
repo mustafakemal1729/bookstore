@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar navbar-expand-md custom-nav">
         <div class="container">
-            <RouterLink class="navbar-brand" to="#">{{ brandName }}</RouterLink>
+            <RouterLink class="navbar-brand" to="/">BookStore</RouterLink>
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <RouterLink class="nav-link" v-bind:to="{ name: 'home' }">Home</RouterLink>
@@ -13,10 +13,10 @@
                     <RouterLink class="nav-link" v-bind:to="{ name: 'contact' }">Contact</RouterLink>
                 </li>
                 <li class="nav-item">
-                    <RouterLink class="nav-link" v-bind:to="{name: 'login'}">Login</RouterLink>
+                    <RouterLink class="nav-link" v-bind:to="{ name: 'login' }">Login</RouterLink>
                 </li>
                 <li class="nav-item">
-                    <RouterLink class="nav-link" v-bind:to="{name: 'register'}">Register</RouterLink>
+                    <RouterLink class="nav-link" v-bind:to="{ name: 'register' }">Register</RouterLink>
                 </li>
             </ul>
         </div>
@@ -28,11 +28,6 @@ import { RouterLink } from 'vue-router';
 
 export default {
     name: "NavBar",
-    data() {
-        return {
-            brandName: "BookStore"
-        };
-    },
     components: { RouterLink }
 }
 </script>
@@ -54,5 +49,13 @@ export default {
     padding: 10px 25px;
     color: #fff;
     text-align: center;
+}
+
+.nav-link:hover {
+    color: aqua;
+}
+
+.active-link {
+    color: red;
 }
 </style>

@@ -1,21 +1,17 @@
 <template>
     <div>
-        Books Page
+        <SectionHeader title="books" message="section header ogreniyoruz" />
     </div>
-    <img v-bind:src="imageSrc" alt="" width="600" height="540">
 </template>
 
 <script>
-    export default {
-        name: "books",
-        data() {
-            return {
-                imageSrc: "https://caltech-prod.s3.amazonaws.com/main/images/feynman01-NEWS-WEB.width-600_tSwRQP5.jpg"
-            }
-        }
+import SectionHeader from '@/components/SectionHeader.vue';
+export default {
+    name: "books",
+    components: {
+        SectionHeader,
     }
+}
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

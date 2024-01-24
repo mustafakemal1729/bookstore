@@ -36,6 +36,7 @@ const router = createRouter({
             component: RegisterView,
         },
     ],
+    linkActiveClass: 'active-link'
 });
 
 export default router;
