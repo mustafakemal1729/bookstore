@@ -4,20 +4,18 @@
         <div class="card-body">
             <div class="auth-box">
                 <span style="background-color: #063547;" class="py-1 px-3 text-white rounded-pill">
-                    Mustafa Kemal
-                </span>
+                    Mustafa Kemal</span>
+                <h5 class="card-title mt-3 fw-bold">Song of Impossible</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, nisi.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <a href="#" class="card-link">Read More</a>
+                    <p style="background-color: #063547;" class="py-1 px-2 text-white badge mb-0">19 Jan 2021</p>
+                </div>
             </div>
-            <h5 class="card-title mt-3 fw-bold">Song of impossible</h5>
-            <p card-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed, maxime?</p>
-            <div class="d-flex justify-content-between align-items-center">
-                <a href="" class="card-link">Read More</a>
-                <p style="background-color: #063547;" class="py-1 px-2 text-white badge mb-0">19 Jan 2021</p>
-            </div>
+            <span
+                class="top-0 start-100 position-absolute translate-middle bg-info p-2 text-light rounded-circle border border-2 border-light">7.6</span>
         </div>
-        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-info 
-            text-light rounded-circle border border-2 border-light">
-            7.5
-        </span>
+
     </div>
 </template>
 
