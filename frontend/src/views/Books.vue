@@ -1,8 +1,9 @@
 <template>
     <section>
         <div class="container">
-            <SectionHeader title="books" message="section header ogreniyoruz" />
-            <BookList :books="books"/>
+            <SectionHeader title="books" message="food for mind" />
+            <BookList :books="books" />
+            <Pagination />
         </div>
     </section>
 </template>
@@ -11,13 +12,15 @@
 import SectionHeader from '@/components/SectionHeader.vue';
 import BookList from '@/components/BookList.vue';
 import books from '@/db.js';
+import Pagination from '@/components/Pagination.vue';
 export default {
     name: "books",
     components: {
         SectionHeader,
         BookList,
+        Pagination,
     },
-    data(){
+    data() {
         return {
             books: books
         }
