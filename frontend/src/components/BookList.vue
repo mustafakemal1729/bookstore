@@ -1,7 +1,7 @@
 <template>
     <div class="row">
-        <div class="col-sm-6 col-md-4 col-xl-4">
-            <BookItem />
+        <div class="col-sm-6 col-md-4 col-xl-3 mb-3" v-for="book in books" :key="book.id">
+            <BookItem :book="book" />
         </div>
     </div>
 </template>
@@ -11,7 +11,13 @@ import BookItem from '@/components/BookItem.vue';
 export default {
     name: "BookList",
     components: {
-        BookItem
+        BookItem,
+    },
+    props: {
+        books: {
+            type: Array,
+            default: () => ([])
+        }
     }
 }
 </script>
