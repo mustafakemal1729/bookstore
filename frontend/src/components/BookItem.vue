@@ -1,6 +1,6 @@
 <template>
     <div class="card border-0 shadow position-relative">
-        <img src="../../template/images/b1.jpg" class="card-img-top">
+        <img src="../../templates/images/b1.jpg" class="card-img-top">
         <div class="card-body">
             <div class="auth-box">
                 <span style="background-color: #063547;" class="py-1 px-3 text-white rounded-pill">{{ book.author }}</span>
@@ -11,8 +11,8 @@
                     <p style="background-color: #063547;" class="py-1 px-2 text-white badge mb-0">{{ book.uploadDate }}</p>
                 </div>
             </div>
-            <span
-                class="top-0 start-100 position-absolute translate-middle bg-info p-2 text-light rounded-circle border border-2 border-light">
+            <span :class="ratingBadge"
+                class="top-0 start-100 position-absolute translate-middle p-2 text-light rounded-circle border border-2 border-light">
                 {{ book.rating }}
             </span>
         </div>
@@ -27,8 +27,21 @@ export default {
         book: {
             type: Object,
             default: () => ({})
+        },
+    },
+    computed: {
+            ratingBadge(){
+                if(this.book.rating > 7){
+                    return 'bg-success'
+                }
+                else if (this.book.rating > 4) {
+                    return 'bg-warning'
+                }
+                else {
+                    return 'bg-danger'
+                }
+            }
         }
-    }
 }
 </script>
 

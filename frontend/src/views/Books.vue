@@ -2,8 +2,8 @@
     <section>
         <div class="container">
             <SectionHeader title="books" message="food for mind" />
-            <BookList :books="books" />
-            <Pagination />
+            <BookList :books="paginatedBooks" />
+            <Pagination :currentPage="currentPage" :totalPages="totalPages"/>
         </div>
     </section>
 </template>
@@ -22,8 +22,20 @@ export default {
     },
     data() {
         return {
-            books: books
+            books: books,
+            currentPage: 1,
+            itemsPerPage: 4
         }
+    },
+    computed: {
+        totalPages(){
+            return Math.ceil(this.books.length / this.books.itemsPerPage)
+        }, 
+         paginatedBooks() {
+                const startIndex = (this.currentPage - 1) * this.itemsPerPage
+                const endIndex = startIndex + this.itemsPerPage
+                return this.books.slice(startIndex, endIndex)
+            }
     }
 }
 </script>
