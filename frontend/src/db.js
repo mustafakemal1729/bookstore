@@ -97,7 +97,7 @@ const books = [
         'An epic fantasy series filled with knights, dragons, and quests for honor.',
       rating: 4.8,
       uploadDate: '19 Jan 2021',
-    },
+    }
   ];
   
   export default books;
