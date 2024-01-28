@@ -4,6 +4,7 @@ import Books from "@/views/Books.vue"
 import Contact from "@/views/Contact.vue"
 import LoginView from "@/views/LoginView.vue"
 import RegisterView from "@/views/RegisterView.vue";
+import BookDetailView from "@/views/BookDetailView.vue";
 
 
 
@@ -19,6 +20,11 @@ const router = createRouter({
             path: "/books",
             name: "books",
             component: Books
+        },
+        {
+            path: "/books/:id",
+            name: "book-detail",
+            component: BookDetailView
         },
         {
             path: "/contact",
