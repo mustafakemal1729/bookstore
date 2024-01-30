@@ -2,7 +2,9 @@
     <section>
         <div class="container">
             <SectionHeader :title="book.name" :message="book.author" />
-            <RouterLink :to="'/books/'"><button>back</button></RouterLink>
+            <RouterLink :to="'/books/'">
+                <font-awesome-icon icon="arrow-left" size="2xl" class="mb-2" />
+            </RouterLink>
             <div class="row mb-4">
                 <div class="col-lg-6">
                     <img class="card-img-top" src="../../templates/images/b_detail.jpg" />
@@ -44,8 +46,8 @@
                                 <div class="d-flex justify-content-between">
                                     <p class="fw-bold fst-italic">John Doe</p>
                                     <div class="d-flex align-items-center">
-                                        <p>Upvote</p>
-                                        <p class="ps-2"> <strong>8</strong></p>
+                                        <font-awesome-icon :icon="['far', 'thumbs-up']" />
+                                        <p class="ps-2 mb-0"> <strong>8</strong></p>
                                     </div>
                                 </div>
                             </div>
@@ -57,8 +59,8 @@
                                 <div class="d-flex justify-content-between">
                                     <p class="fw-bold fst-italic">John Doe</p>
                                     <div class="d-flex align-items-center">
-                                        <p>Upvote</p>
-                                        <p class="ps-2"> <strong>8</strong></p>
+                                       <font-awesome-icon :icon="['far', 'thumbs-up']" />
+                                        <p class="ps-2 mb-0"> <strong>8</strong></p>
                                     </div>
                                 </div>
                             </div>
@@ -70,8 +72,8 @@
                                 <div class="d-flex justify-content-between">
                                     <p class="fw-bold fst-italic">John Doe</p>
                                     <div class="d-flex align-items-center">
-                                        <p>Upvote</p>
-                                        <p class="ps-2"> <strong>8</strong></p>
+                                        <font-awesome-icon :icon="['far', 'thumbs-up']" />
+                                        <p class="ps-2 mb-0"> <strong>8</strong></p>
                                     </div>
                                 </div>
                             </div>
@@ -83,21 +85,8 @@
                                 <div class="d-flex justify-content-between">
                                     <p class="fw-bold fst-italic">John Doe</p>
                                     <div class="d-flex align-items-center">
-                                        <p>Upvote</p>
-                                        <p class="ps-2"> <strong>8</strong></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card mb-2">
-                            <div class="card-body">
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iusto eius facilis
-                                    voluptatibus et nesciunt.</p>
-                                <div class="d-flex justify-content-between">
-                                    <p class="fw-bold fst-italic">John Doe</p>
-                                    <div class="d-flex align-items-center">
-                                        <p>Upvote</p>
-                                        <p class="ps-2"> <strong>8</strong></p>
+                                        <font-awesome-icon :icon="['far', 'thumbs-up']" />
+                                        <p class="ps-2 mb-0"> <strong>8</strong></p>
                                     </div>
                                 </div>
                             </div>
