@@ -52,7 +52,7 @@ export default {
 </script>
 
 <style scoped>
-.auth-box {
-    margin-top: -20px;
+.card-text {
+    min-height: 70px;
 }
 </style>
