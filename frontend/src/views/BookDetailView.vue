@@ -46,8 +46,10 @@
                                 <div class="d-flex justify-content-between">
                                     <p class="fw-bold fst-italic">John Doe</p>
                                     <div class="d-flex align-items-center">
-                                        <font-awesome-icon :icon="['far', 'thumbs-up']" />
-                                        <p class="ps-2 mb-0"> <strong>8</strong></p>
+                                        <button @click="upvoteData">
+                                            <font-awesome-icon :icon="['far', 'thumbs-up']" />
+                                        </button>
+                                        <p class="ps-2 mb-0" v-show="upvote > 0"> <strong>{{ upvote }}</strong></p>
                                     </div>
                                 </div>
                             </div>
@@ -59,8 +61,11 @@
                                 <div class="d-flex justify-content-between">
                                     <p class="fw-bold fst-italic">John Doe</p>
                                     <div class="d-flex align-items-center">
-                                       <font-awesome-icon :icon="['far', 'thumbs-up']" />
-                                        <p class="ps-2 mb-0"> <strong>8</strong></p>
+
+                                        <button @click="upvoteData">
+                                            <font-awesome-icon :icon="['far', 'thumbs-up']" />
+                                        </button>
+                                        <p class="ps-2 mb-0" v-show="upvote > 0"> <strong>{{ upvote }}</strong></p>
                                     </div>
                                 </div>
                             </div>
@@ -72,8 +77,10 @@
                                 <div class="d-flex justify-content-between">
                                     <p class="fw-bold fst-italic">John Doe</p>
                                     <div class="d-flex align-items-center">
-                                        <font-awesome-icon :icon="['far', 'thumbs-up']" />
-                                        <p class="ps-2 mb-0"> <strong>8</strong></p>
+                                        <button @click="upvoteData">
+                                            <font-awesome-icon :icon="['far', 'thumbs-up']" />
+                                        </button>
+                                        <p class="ps-2 mb-0" v-show="upvote > 0"> <strong>{{ upvote }}</strong></p>
                                     </div>
                                 </div>
                             </div>
@@ -85,8 +92,10 @@
                                 <div class="d-flex justify-content-between">
                                     <p class="fw-bold fst-italic">John Doe</p>
                                     <div class="d-flex align-items-center">
-                                        <font-awesome-icon :icon="['far', 'thumbs-up']" />
-                                        <p class="ps-2 mb-0"> <strong>8</strong></p>
+                                        <button @click="upvoteData">
+                                            <font-awesome-icon :icon="['far', 'thumbs-up']" />
+                                        </button>
+                                        <p class="ps-2 mb-0" v-show="upvote > 0"> <strong>{{ upvote }}</strong></p>
                                     </div>
                                 </div>
                             </div>
@@ -109,13 +118,21 @@ export default {
     },
     data() {
         return {
-            book: null
+            book: null,
+            upvote: 0,
         }
     },
     created() {
         const bookId = this.$route.params.id;
         this.book = books.find(book => book.id === parseInt(bookId))
+    },
+    methods: {
+        upvoteData() {
+            this.upvote++;
+            // You might want to emit an event or perform additional logic here
+        }
     }
+
 }
 </script>
 
