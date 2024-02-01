@@ -1,12 +1,14 @@
 <template>
-    <div>
-        RegisterView Page
+   <section>
+    <div class="container">
+        
     </div>
+   </section>
 </template>
 
 <script>
     export default {
-        name: "register"
+        name: "RegisterView"
     }
 </script>
 
