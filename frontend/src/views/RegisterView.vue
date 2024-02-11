@@ -1,12 +1,13 @@
 <template>
     <section>
         <div class="container">
-            <form>
+            <form class="mt-5">
                 <div class="row justify-content-center">
                     <!-- Username Field (Medium and Larger Screens) -->
                     <div class="col-md-6 col-8 mb-3">
                         <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="username" name="username" required>
+                        <input type="text" class="form-control" id="username" name="username" v-model="formData.username"
+                            required>
                     </div>
                 </div>
 
@@ -14,7 +15,7 @@
                     <!-- Email Field (Medium and Larger Screens) -->
                     <div class="col-md-6 col-8 mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
+                        <input type="email" class="form-control" id="email" name="email" v-model="formData.email" required>
                     </div>
                 </div>
 
@@ -22,7 +23,8 @@
                 <div class="row justify-content-center">
                     <div class="col-md-6 col-8 mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" required>
+                        <input type="password" class="form-control" id="password" name="password"
+                            v-model="formData.password" required>
                     </div>
                 </div>
 
@@ -31,13 +33,15 @@
                     <div class="col-md-6 col-8 mb-3">
                         <h5>Gender</h5>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gender" value='male' id="male">
+                            <input class="form-check-input" type="radio" name="gender" value='male' id="male"
+                            v-model="formData.gender">
                             <label class="form-check-label" for="male">
                                 Male
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gender" value='female' id="female">
+                            <input class="form-check-input" type="radio" name="gender" value='female' id="female"
+                            v-model="formData.gender">
                             <label class="form-check-label" for="female">
                                 Female
                             </label>
@@ -98,8 +102,22 @@
 
 <script>
 export default {
-    name: "RegisterView"
+    name: "RegisterView",
+    data() {
+        return {
+            formData: {
+                username: '',
+                email: '',
+                password: '',
+                gender: '',
+            }
+        }
+    },
+
+    methods: {
+
+    }
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>
