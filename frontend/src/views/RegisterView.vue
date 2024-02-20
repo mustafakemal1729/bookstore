@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="container">
-            <form class="mt-5">
+            <form class="mt-5" @submit="submitForm">
                 <div class="row justify-content-center">
                     <!-- Username Field (Medium and Larger Screens) -->
                     <div class="col-md-6 col-8 mb-3">
@@ -53,7 +53,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-6 col-8 mb-3">
                         <label for="age" class="form-label">Age:</label>
-                        <input type="number" class="form-control" id="age" required>
+                        <input class="form-control" id="age" v-model.number="formData.age" required>
                     </div>
                 </div>
 
@@ -62,25 +62,25 @@
                     <div class="col-md-6 col-8 mb-3">
                         <h5>Which Programming Language(s) you know?</h5>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="java" id="java">
+                            <input class="form-check-input" type="checkbox" value="java" v-model="formData.languages" id="java">
                             <label class="form-check-label" for="java">
                                 Java
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="c++" id="c++">
+                            <input class="form-check-input" type="checkbox" value="c++" v-model="formData.languages" id="c++">
                             <label class="form-check-label" for="c++">
                                 C++
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="python" id="python">
+                            <input class="form-check-input" type="checkbox" value="python" v-model="formData.languages" id="python">
                             <label class="form-check-label" for="python">
                                 Python
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="rust" id="rust">
+                            <input class="form-check-input" type="checkbox" value="rust" v-model="formData.languages" id="rust">
                             <label class="form-check-label" for="rust">
                                 Rust
                             </label>
@@ -110,12 +110,17 @@ export default {
                 email: '',
                 password: '',
                 gender: '',
+                age: null,
+                languages: [],
             }
         }
     },
 
     methods: {
-
+        submitForm(event){
+            event.preventDefault();
+            console.log("formData:", this.formData)
+        }
     }
 }
 </script>
