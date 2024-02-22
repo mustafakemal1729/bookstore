@@ -1,101 +1,81 @@
 <template>
     <section>
         <div class="container">
-            <SectionHeader :title="book.name" :message="book.author" />
-            <RouterLink :to="'/books/'">
-                <font-awesome-icon icon="arrow-left" size="2xl" class="mb-2" />
-            </RouterLink>
-            <div class="row mb-4">
+            <SectionHeader title="Book Detail" message="kitaplar" />
+            <button>
+                <RouterLink v-bind:to="{name: 'books' }">back</RouterLink>
+            </button>
+            <div class="row">
                 <div class="col-lg-6">
-                    <img class="card-img-top" src="../../templates/images/b_detail.jpg" />
+                    <img src="../../templates/images/b_detail.jpg" class="card-img-top">
                 </div>
                 <div class="col-lg-6 details-wrapper">
-                    <p class="lead description">{{ book.description }}</p>
-                    <div class="mb-4">
-                        <div class="row border-bottom pb-2">
-                            <div class="col-lg-6">
-                                <strong>Page</strong>
-                            </div>
-                            <div class="col-lg-6">
-                                {{ book.page }}
-                            </div>
-                        </div>
-                        <div class="row border-bottom pb-2">
-                            <div class="col-lg-6">
-                                <strong>Rating</strong>
-                            </div>
-                            <div class="col-lg-6">
-                                {{ book.rating }}
-                            </div>
-                        </div>
-                        <div class="row border-bottom pb-2">
-                            <div class="col-lg-6">
-                                <strong>Upload Date</strong>
-                            </div>
-                            <div class="col-lg-6">
-                                {{ book.uploadDate }}
-                            </div>
-                        </div>
+                    <p class="lead description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, tenetur.
+                    </p>
+                    <div class="row border-bottom pb-2">
+                        <div class="col-lg-6"><strong>Page</strong></div>
+                        <div class="col-lg-6">2</div>
                     </div>
+                    <div class="row border-bottom pb-2">
+                        <div class="col-lg-6"><strong>Category</strong></div>
+                        <div class="col-lg-6">2</div>
+                    </div>
+                    <div class="row border-bottom pb-2">
+                        <div class="col-lg-6"><strong>Rating</strong></div>
+                        <div class="col-lg-6">2.6</div>
+                    </div>
+                    <div class="row border-bottom pb-2">
+                        <div class="col-lg-6"><strong>Upload Date</strong></div>
+                        <div class="col-lg-6">21 12 2332</div>
+                    </div>
+
                     <div class="comments-section">
                         <h3 class="display-6 mb-2">Comments</h3>
-                        <div class="card mb-2">
+                        <div class="card mb-4">
                             <div class="card-body">
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iusto eius facilis
-                                    voluptatibus et nesciunt.</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, quas!</p>
                                 <div class="d-flex justify-content-between">
                                     <p class="fw-bold fst-italic">John Doe</p>
                                     <div class="d-flex align-items-center">
-                                        <button @click="upvoteData">
-                                            <font-awesome-icon :icon="['far', 'thumbs-up']" />
-                                        </button>
-                                        <p class="ps-2 mb-0" v-show="upvote > 0"> <strong>{{ upvote }}</strong></p>
+                                        <p>Upvote</p>
+                                        <p class="ps-2"><strong>8</strong></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card mb-2">
+                        <div class="card mb-4">
                             <div class="card-body">
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iusto eius facilis
-                                    voluptatibus et nesciunt.</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, quas!</p>
                                 <div class="d-flex justify-content-between">
                                     <p class="fw-bold fst-italic">John Doe</p>
                                     <div class="d-flex align-items-center">
-
-                                        <button @click="upvoteData">
-                                            <font-awesome-icon :icon="['far', 'thumbs-up']" />
-                                        </button>
-                                        <p class="ps-2 mb-0" v-show="upvote > 0"> <strong>{{ upvote }}</strong></p>
+                                        <p>Upvote</p>
+                                        <p class="ps-2"><strong>8</strong></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card mb-2">
+                        <div class="card mb-4">
                             <div class="card-body">
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iusto eius facilis
-                                    voluptatibus et nesciunt.</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, quas!</p>
                                 <div class="d-flex justify-content-between">
                                     <p class="fw-bold fst-italic">John Doe</p>
                                     <div class="d-flex align-items-center">
-                                        <button @click="upvoteData">
-                                            <font-awesome-icon :icon="['far', 'thumbs-up']" />
-                                        </button>
-                                        <p class="ps-2 mb-0" v-show="upvote > 0"> <strong>{{ upvote }}</strong></p>
+                                        <p>Upvote</p>
+                                        <p class="ps-2"><strong>8</strong></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card mb-2">
+                        <div class="card mb-4">
                             <div class="card-body">
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iusto eius facilis
-                                    voluptatibus et nesciunt.</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, quas!</p>
                                 <div class="d-flex justify-content-between">
                                     <p class="fw-bold fst-italic">John Doe</p>
                                     <div class="d-flex align-items-center">
-                                        <button @click="upvoteData">
-                                            <font-awesome-icon :icon="['far', 'thumbs-up']" />
-                                        </button>
-                                        <p class="ps-2 mb-0" v-show="upvote > 0"> <strong>{{ upvote }}</strong></p>
+                                        <p>Upvote</p>
+                                        <p class="ps-2"><strong>8</strong></p>
                                     </div>
                                 </div>
                             </div>
@@ -108,37 +88,19 @@
 </template>
 
 <script>
-import { RouterLink } from 'vue-router';
-import books from "@/db.js";
 import SectionHeader from '@/components/SectionHeader.vue';
 export default {
-    name: "book-detail",
+    name: "BookDetailView",
     components: {
-        SectionHeader
-    },
-    data() {
-        return {
-            book: null,
-            upvote: 0,
-        }
-    },
-    created() {
-        const bookId = this.$route.params.id;
-        this.book = books.find(book => book.id === parseInt(bookId))
-    },
-    methods: {
-        upvoteData() {
-            this.upvote++;
-            // You might want to emit an event or perform additional logic here
-        }
+        SectionHeader,
     }
-
 }
 </script>
 
 <style scoped>
+
 .details-wrapper {
-    max-width: 740px;
+    max-height: 740px;
     display: flex;
     flex-direction: column;
 }
@@ -148,7 +110,4 @@ export default {
     overflow-y: auto;
 }
 
-.description {
-    overflow-y: auto;
-}
 </style>
