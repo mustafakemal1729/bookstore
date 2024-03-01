@@ -11,23 +11,23 @@
                 </div>
                 <div class="col-lg-6 details-wrapper">
                     <p class="lead description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, tenetur.
+                        {{ book.description }}
                     </p>
                     <div class="row border-bottom pb-2">
                         <div class="col-lg-6"><strong>Page</strong></div>
-                        <div class="col-lg-6">2</div>
+                        <div class="col-lg-6">{{ book.page }}</div>
                     </div>
                     <div class="row border-bottom pb-2">
                         <div class="col-lg-6"><strong>Category</strong></div>
-                        <div class="col-lg-6">2</div>
+                        <div class="col-lg-6">Fiction</div>
                     </div>
                     <div class="row border-bottom pb-2">
                         <div class="col-lg-6"><strong>Rating</strong></div>
-                        <div class="col-lg-6">2.6</div>
+                        <div class="col-lg-6">{{ book.rating }}</div>
                     </div>
                     <div class="row border-bottom pb-2">
                         <div class="col-lg-6"><strong>Upload Date</strong></div>
-                        <div class="col-lg-6">21 12 2332</div>
+                        <div class="col-lg-6">{{ book.uploadDate }}</div>
                     </div>
 
                     <div class="comments-section">
@@ -89,10 +89,20 @@
 
 <script>
 import SectionHeader from '@/components/SectionHeader.vue';
+import books from "@/db.js";
 export default {
     name: "BookDetailView",
     components: {
         SectionHeader,
+    },
+    data(){
+        return {
+            book: null,
+        }
+    },
+    created(){
+        const bookId = this.$route.params.id;
+        this.book = books.find(book => book.id === parseInt(bookId))
     }
 }
 </script>
