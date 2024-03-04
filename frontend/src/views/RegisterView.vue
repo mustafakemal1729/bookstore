@@ -1,8 +1,8 @@
 <template>
-    <section>
+    <section class="full-section-height">
         <div class="container">
-            <form class="mt-3" @submit="submitForm">
-                <div class="row justify-content-center custom">
+            <form @submit="submitForm">
+                <div class="row justify-content-center">
                     <!-- Username Field (Medium and Larger Screens) -->
                     <div class="col-md-6 col-8 mb-3">
                         <label for="username" class="form-label">Username</label>
@@ -10,8 +10,6 @@
                             v-model="formData.username" required>
                     </div>
                 </div>
-
-                {{ formData.username }}
 
                 <div class="row justify-content-center">
                     <!-- Email Field (Medium and Larger Screens) -->
@@ -54,12 +52,14 @@ export default {
                 password: '',
             },
         }
+    },
+    methods: {
+        submitForm(event) {
+            event.preventDefault();
+            console.log("formData:", this.formData)
+        }
     }
 }
 </script>
 
-<style scoped>
-.custom {
-    margin-top: 10px;
-}
-</style>
+<style scoped></style>

@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700&display=swap");
+
+
+/* root variables */
+
+:root {
+    --primary-color: #063547;
+}
+
+
+/* general settings */
+
+html,
+body {
+    font-family: "Mulish", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* custom */
+
+.full-section-height {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+}

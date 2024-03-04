@@ -33,7 +33,7 @@ export default {
 </script>
 <style scoped>
 .custom-nav {
-    background-color: #063560;
+    background-color: var(--primary-color);
     padding: 15px 0;
 }
 
