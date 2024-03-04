@@ -52,7 +52,7 @@ export default {
 }
 
 .nav-link:hover {
-    color: aqua;
+    color: var(--secondary-color);
 }
 
 .active-link {
