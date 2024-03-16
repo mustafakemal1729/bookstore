@@ -1,13 +1,21 @@
 import express from "express";
+import bookroute from "./route/bookroute.js";
+import connectDB from "./config/db.js";
 const app = express();
 
 const port = 3003
 
 
-app.get("/", (req, res) => {
-    res.send("hello and welcome from the backend!")
-});
+app.use("/api/v1/books", bookroute);
 
-app.listen(port, () => {
-    console.log(`Server started at ${port}`)
-})
+try {
+    await connectDB();
+
+    app.listen(port, () => {
+        console.log(`Server started at ${port}`)
+    });
+}
+
+catch(error) {
+    process.exit(1);
+}
