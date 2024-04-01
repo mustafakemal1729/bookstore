@@ -1,18 +1,19 @@
+import { get } from "mongoose";
+
 const getAllBooks = (req, res) => {
     const books = [
         {
             id: 1,
-            name: "Karamazov Brothers"
+            name: "Karamazof Brothers"
         },
         {
             id: 2,
-            name: "Family Happiness"
+            name: "Call of the wild",
         },
     ];
-
     res.json(books);
-}
+};
 
 export {
     getAllBooks
-};
+}
